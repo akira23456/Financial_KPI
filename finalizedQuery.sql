@@ -1,0 +1,21 @@
+SELECT 
+    stock as Stock,
+    endDate as End_Date,
+    grossProfit as Gross_Profit,
+    totalRevenue as Total_Revenue,
+    operatingIncome as Operating_Income,
+    netIncome as Net_Income,
+    totalCurrentAssets as Total_Current_Assets,
+    totalCurrentLiabilities as Total_Current_Liabilities,
+    inventory as Inventory,
+    cash as Cash,
+    shortTermInvestments as Short_Term_Investments,
+    totalLiab as Total_Liability,
+    totalStockholderEquity as Total_Stockholder_Equity,
+    ebit as EBIT,
+    interestExpense as Interest_Expense,
+    costOfRevenue as Cost_of_Revenue,
+    netReceivables as Net_Receivables,
+    totalCashFromOperatingActivities as Total_Cash_From_Operating_Activities,
+    capitalExpenditures as Capital_Expenditures
+FROM cleaned_financial_data;
