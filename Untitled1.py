@@ -14,6 +14,22 @@
 # ---
 
 # %%
+# ---
+# jupyter:
+#   jupytext:
+#     formats: py:percent
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.17.3
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+# ---
+
+# %%
 # --- Imports ---
 import torch
 import torch.nn as nn
@@ -100,7 +116,7 @@ preds = preds_scaled * scale_factor
 
 # --- Step 7: Save for Power BI ---
 preds_df = pd.DataFrame({
-    "Company": df["Company"],   # or whatever your identifier column is
+    "Company": df["stock"],   # or whatever your identifier column is
     "Actual": y.values,
     "Predicted": preds.numpy()
 })
@@ -111,5 +127,8 @@ print("✅ Predictions saved to predictions_for_powerbi.csv")
 
 
 # %%
+
+# %%
+
 
 # %%
