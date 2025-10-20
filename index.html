@@ -328,6 +328,56 @@
                     }
                 });
             }
+
+            // Debt to Equity Bar
+            const ctx3 = document.getElementById('debtChart');
+            if (ctx3) {
+                charts.debt = new Chart(ctx3, {
+                    type: 'bar',
+                    data: {
+                        labels: roeData.map(d => d.stock),
+                        datasets: [{
+                            label: 'Debt/Equity Ratio',
+                            data: roeData.map(d => d.debt_to_equity || 0),
+                            backgroundColor: '#a855f7'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { labels: { color: '#94a3b8' } } },
+                        scales: {
+                            x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: '#334155' } },
+                            y: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } }
+                        }
+                    }
+                });
+            }
+
+            // Current Ratio Bar
+            const ctx4 = document.getElementById('currentRatioChart');
+            if (ctx4) {
+                charts.currentRatio = new Chart(ctx4, {
+                    type: 'bar',
+                    data: {
+                        labels: roeData.map(d => d.stock),
+                        datasets: [{
+                            label: 'Current Ratio',
+                            data: roeData.map(d => d.current_ratio || 0),
+                            backgroundColor: roeData.map(d => (d.current_ratio || 0) > 1.5 ? '#22c55e' : '#f59e0b')
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { labels: { color: '#94a3b8' } } },
+                        scales: {
+                            x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: '#334155' } },
+                            y: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } }
+                        }
+                    }
+                });
+            }
         }
 
         function createPredictionCharts() {
@@ -443,9 +493,19 @@
                         <h2 style="margin-bottom: 15px;">Financial Metrics Over Time</h2>
                         <canvas id="timeSeriesChart"></canvas>
                     </div>
+                    <div class="chart-grid">
+                        <div class="chart-container">
+                            <h2 style="margin-bottom: 15px;">ROE Distribution</h2>
+                            <canvas id="roeChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h2 style="margin-bottom: 15px;">Debt to Equity Analysis</h2>
+                            <canvas id="debtChart"></canvas>
+                        </div>
+                    </div>
                     <div class="chart-container">
-                        <h2 style="margin-bottom: 15px;">ROE Distribution</h2>
-                        <canvas id="roeChart"></canvas>
+                        <h2 style="margin-bottom: 15px;">Current Ratio Analysis</h2>
+                        <canvas id="currentRatioChart"></canvas>
                     </div>
                 `;
             } else if (activeTab === 'predictions') {
