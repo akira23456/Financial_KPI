@@ -6,7 +6,7 @@ It includes data cleaning and transformation with Python, KPI calculation and va
 
 🌐 Interactive Dashboard
 
-View Live Dashboard
+https://akira23456.github.io/Financial_KPI/
 
 The dashboard allows users to explore historical financial metrics and machine learning predictions across multiple stocks — including ROE (Return on Equity), Debt-to-Equity Ratio, Current Ratio, and other key performance indicators.
 
