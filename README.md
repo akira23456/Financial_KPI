@@ -53,7 +53,7 @@ Generated predicted vs. actual comparison datasets for dashboard visualization.
 
 4. Visualization (Interactive HTML Dashboard)
 
-Developed a fully interactive web-based dashboard using HTML, JavaScript, Recharts, and Tailwind CSS.
+Used Claude to use my data and create a fully interactive web-based dashboard using HTML, JavaScript, Recharts, and Tailwind CSS.
 
 Added dynamic views for:
 
